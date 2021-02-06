@@ -10,7 +10,7 @@ export const TaskList = ({props}) => {
     useEffect(() =>{
         getTasks()
     }, [])
-console.log("tasks", tasks)
+
     return (
         <>
         <section>
