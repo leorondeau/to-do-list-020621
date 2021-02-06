@@ -26,9 +26,9 @@ export const TaskDataProvider = (props) => {
         .then(getTasks)
     }
 
-    const deleteTask = (task) => {
+    const deleteTask = (taskId) => {
 
-        return fetch(`http://localhost:8088/tasks/${task.id}`, {
+        return fetch(`http://localhost:8088/tasks/${taskId}`, {
             method: "DELETE",            
         })
         .then(getTasks)
