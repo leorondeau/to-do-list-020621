@@ -17,7 +17,7 @@ export const ApplicationViews = (props) => {
         <Route exact path="/" render={(props) => {
           return <TaskForm {...props} />
         }} />
-        <Route path="/:taskId(\d+)" render={
+        <Route path="/tasks/:taskId(\d+)" render={
           props => <TaskForm {...props} />
         } />
       </TaskDataProvider>
