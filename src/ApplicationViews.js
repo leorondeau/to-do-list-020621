@@ -9,17 +9,21 @@ import { TaskDataProvider } from './components/task/TaskProvider'
 export const ApplicationViews = (props) => {
   return (
 
-  <>
-    <TaskDataProvider>
-      <Route exact path="/">
-        <TaskList />
-        <TaskForm />
-
-      </Route>
-      
-    </TaskDataProvider>
-</>
-)}
+    <>
+      <TaskDataProvider>
+        <Route exact path="/">
+          <TaskList />
+        </Route>
+        <Route exact path="/" render={(props) => {
+          return <TaskForm {...props} />
+        }} />
+        <Route path="/:taskId(\d+)" render={
+          props => <TaskForm {...props} />
+        } />
+      </TaskDataProvider>
+    </>
+  )
+}
 
 
 export default ApplicationViews;
