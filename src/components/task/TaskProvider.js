@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 export const TaskContext = React.createContext()
 
-export const TaskDataProvider = () => {
+export const TaskDataProvider = (props) => {
     const [tasks, setTasks] = useState([])
 
     const getTasks = () => {
@@ -26,9 +26,9 @@ export const TaskDataProvider = () => {
         .then(getTasks)
     }
 
-    const deleteTask = (task) => {
+    const deleteTask = (taskId) => {
 
-        return fetch(`http://localhost:8088/tasks/${task.id}`, {
+        return fetch(`http://localhost:8088/tasks/${taskId}`, {
             method: "DELETE",            
         })
         .then(getTasks)
@@ -45,7 +45,7 @@ export const TaskDataProvider = () => {
         .then(getTasks)
     }
 
-    
+
     return (
         <TaskContext.Provider value={{
             tasks, getTasks, setTasks, addTask, deleteTask, addTask, updateTask
