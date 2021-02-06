@@ -10,7 +10,8 @@
 
 # Testing Instructions
 `git fetch origin `
-`git checkout ` 
+`git checkout
+npm start` 
 
 User Instructions: 
 
